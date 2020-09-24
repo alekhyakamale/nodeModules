@@ -1,38 +1,300 @@
-.App {
-  text-align: center;
+.ibox-content {
+  background-color: #FFFFFF;
+  color: inherit;
+  padding: 0px 20px 0px 20px;
+  border-color: #E7EAEC;
+  border-image: none;
+  border-width: 1px 0px;
+}
+.suggestions-list{
+  position: relative;
+  width: 87.5%;
+  background-color: white;
+  display: inline-block;
+  position: absolute;
+  box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.2);
+
+}
+.suggestions-list-content {
+  position: relative;
+  background-color: white;
+  padding: 12px 16px;
+  z-index: 1;
+}
+.suggestions-list-content:hover{
+  background-color: #f1f1f1;
+}
+.input-group:hover{
+  box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+
+}
+.search-form {
+  margin-top: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-result h3 {
+  margin-bottom: 0;
+  color: #1E0FBE;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-result {
+  color: #006621;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search-result p {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.hr-line-dashed {
+  border-top: 1px dashed #E7EAEC;
+  color: #ffffff;
+  background-color: #ffffff;
+  height: 1px;
+  margin: 30px 0;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 100;
+}
+.context-dark, .bg-gray-dark, .bg-primary {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-classic a, .footer-classic a:focus, .footer-classic a:active {
+  color: #ffffff;
+}
+.nav-list li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.nav-list li a:hover:before {
+  margin-left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  padding: 23px;
+  font: 900 13px/1 "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+.social-container .col {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nav-list li a:before {
+  content: "\f14f";
+  font: 400 21px/1 "Material Design Icons";
+  color: #4d6de6;
+  display: inline-block;
+  vertical-align: baseline;
+  margin-left: -28px;
+  margin-right: 7px;
+  opacity: 0;
+  visibility: hidden;
+  transition: .22s ease;
+}
+.search-result h3 { font-size:1.15em; color: dodgerblue; }   .search-result-link { font-size:0.95rem; color: green; }    
+.search-result-link:hover{color: darkgreen;}.search-result p { font-size:0.85rem; margin-top:0px; color: black; }        
+.sub-cat h2 { border-bottom:1px solid #333; font-weight:500; padding-bottom:10px; } .sub-cat li {list-style-type:circle; margin-left:20px; }
+.project-tab thead {
+  background: #222;
+  color: #fff;
+}
+.btn.btn-primary { border-bottom-left-radius:0px; border-top-left-radius:0px; }
+.hr-line-dashed.blue-line { border-top:1px dotted #007bff66; }
+.navbar { padding:2rem 1rem; }
+ .navbar-light .navbar-nav .nav-link { color:#fff; }
+.navbar-light .navbar-nav .nav-link:hover { color:#ccc; }.navbar-nav  { margin-left:30px; } 
+.navbar-nav .nav-item { padding-right:20px; }
+footer{ padding:30px 0px; position: fixed; bottom: 0; 
+  width: 100%;font-size:0.85rem; text-align:center; background-color: #474747;}
+.right-cont h2{ padding-bottom:0px; margin-bottom:0px; border-bottom:0px; }
+.form-control {
+  display: block;
+  width: 100%; height:50px;
+}.btn {
+height: 50px; }.filler { padding:25px; }.filler-120 { padding:120px; }.filler-10 { padding:10px; }.filler-5 { padding:5px; }
+.search-link {
+/* color: white; */
+color: black;
+text-decoration: none;
+/* These are technically the same, but use both */
+/* overflow-wrap: break-word;
+word-wrap: break-word; */
+
+/* -ms-word-break: break-all; */
+/* This is the dangerous one in WebKit, as it breaks things wherever */
+/* word-break: break-all; */
+/* Instead use this non-standard one: */
+/* word-break: break-word; */
+
+/* Adds a hyphen where the word breaks, if supported (No Blink) */
+/* -ms-hyphens: auto;
+-moz-hyphens: auto;
+-webkit-hyphens: auto;
+hyphens: auto; */
+
+}
+.search-link:hover{
+  color: black;
+  text-decoration: none;
+}
+/* .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link {  } */
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: #333;
+  background-color: #fff; border:none;
+  border-bottom: 3px solid #333 !important;
+}
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+   border:none; border-bottom: 3px solid #333 !important;color: #333;
+}
+.nav-tabs {
+  border-bottom: 1px solid #333; margin-bottom:20px;
+}
+.trend-area { border:1px solid #ccc; padding:10px 0px; }
+.trend-area h2.trend-text { border-bottom:1px solid #ccc; text-align:center; padding-bottom:10px; }
+.ibox-content .table { margin-top:12px; }
+.display-2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+}
+.cid-qz35mgqJhF .underline .line {
+  width: 5rem;
+  height: 3px;
+  background: linear-gradient(90deg, #a38dfd, #fe525b);
+  display: inline-block;
+}
+.cid-qz35mgqJhF .underline {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+.mbr-section-title {
+  font-style: normal;
+  line-height: 1.2;
+}
+.cid-qz35mgqJhF .countdown-cont {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.pt-5 {
+  padding-top: 3rem!important;
+}
+.mt-2 {
+  margin-top: .5rem!important;
+}
+.cid-qz35mgqJhF .number-wrap {
+  color: #ffffff;
+  background: #a38dfd;
+  background: linear-gradient(135deg, #a38dfd, #ffa0a4);
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  padding: 5px 10px 13px 10px;
+  margin: 0;
+  min-width: 215px;
+margin-bottom:17px;
+  max-width: 100%;
+}
+.cid-qz35mgqJhF .number {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 55px;
+  text-transform: none;
+  letter-spacing: -2px;
+  word-spacing: 0;
+  line-height: 1.3;
+  color: #ffffff;
+}
+.cid-qz35mgqJhF .period {
+  display: block;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.display-7 {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 1.1rem;
+}
+.align-center {
+  text-align: center;
+}
+.cid-qz35mgqJhF {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #ffffff;
+}
+.cid-qz35mgqJhF .dot {
+  position: absolute;
+  top: -10px;
+  right: -1em;
+  width: 1em;
+  display: none;
+  height: 83%;
+  overflow: hidden;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 89.65px;
+  text-transform: none;
+  letter-spacing: 0;
+  word-spacing: 0;
+  color: #ffffff;
 }
 
-.App-link {
-  color: #61dafb;
+.cid-qz37fAC9pY {
+  border-top:1px solid #aaa;
 }
+.custab thead {    color: #ffffff;
+  background: #a38dfd;
+  background: linear-gradient(135deg, #a38dfd, #ffa0a4);}
+@media (max-width: 543px){
+.cid-qz35mgqJhF .number-wrap {
+  margin-bottom: 15px;
+}
+}
+@media (max-width: 768px){
+.display-2 {
+  font-size: 2.4rem;
+  font-size: calc( 1.7rem + (3 - 1.7) * ((100vw - 20rem) / (48 - 20)));
+  line-height: calc( 1.4 * (1.7rem + (3 - 1.7) * ((100vw - 20rem) / (48 - 20))));
+} }
+@media (max-width: 767px){
+.align-left, .align-center, .align-right, .mbr-section-btn, .mbr-section-title {
+  text-align: center;
+}}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tabsColumn{
+  width: 75%;
+  float: left;
+}
+.filterColumn{
+  float: left;
+}
+.tabSpanner{
+  width: 100%;
+}
+.search-suggestions{
+  text-decoration: none;
+  color: black;
+}
+.search-suggestions:hover{
+  text-decoration: none;
+  color: black;
+}
+.filterLabel{
+  color: dodgerblue;
+  padding-left: 4px;
 }
