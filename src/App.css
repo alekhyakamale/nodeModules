@@ -298,3 +298,16 @@ margin-bottom:17px;
   color: dodgerblue;
   padding-left: 4px;
 }
+.error-message{
+  padding-top: 2px;
+  padding-left: 1.5px;
+  color: red;
+  font-size: 0.8rem;
+}
+.autocorrect{
+  color: dodgerblue;
+}
+.autocorrect:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}

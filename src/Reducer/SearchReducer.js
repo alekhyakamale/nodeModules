@@ -1,11 +1,11 @@
 import { SEARCH_FORM, FETCH_SUGGESTIONS, FETCH_SUGGESTIONS_SUCCESS, FETCH_SUGGESTIONS_FAILURE,
-    FETCH_RESULTS, FETCH_RESULTS_SUCCESS, FETCH_RESULTS_FAILURE, POST_SEARCH_QUERY,
-    POST_SEARCH_QUERY_SUCCESS, POST_SEARCH_QUERY_FAILURE, LOADING } from '../Actions/types';
+    FETCH_RESULTS, FETCH_RESULTS_SUCCESS, FETCH_RESULTS_FAILURE, LOADING } from '../Actions/types';
 
 const initState = { query: '',
                     suggestions: [],
                     results: [],
                     loading: false,
+                    filters: []
                     }
 
 const SearchReducer = (state = initState, action) => {
@@ -60,24 +60,6 @@ const SearchReducer = (state = initState, action) => {
                     error: error2,
                     loading: false
             };
-        case POST_SEARCH_QUERY:
-            return{
-                ...state,
-                    loading: true
-            }
-        case POST_SEARCH_QUERY_SUCCESS:
-            return{
-                ...state,
-                    query: action.payload,
-                    loading: true
-            }
-        case POST_SEARCH_QUERY_FAILURE:
-            let error4 = action.payload || {message: action.payload.message}
-            return{
-                ...state,
-                    error: error4,
-                    loading: true
-            }
         case LOADING:
             return{
                 ...state,

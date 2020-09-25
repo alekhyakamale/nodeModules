@@ -11,14 +11,8 @@ export const getResults = () => {
     return Axios({
         method: "GET",
         url: "Elastic POC Search Response.json"
+        // data: 
     })
 }
 
-export const postSearchRequest = (searchQuery) => {
-    return Axios({
-        method: "POST",
-        url: "",
-        data: searchQuery
-    })
-}
  

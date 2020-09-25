@@ -1,9 +1,7 @@
 import {SEARCH_FORM, FETCH_SUGGESTIONS, FETCH_SUGGESTIONS_SUCCESS, FETCH_SUGGESTIONS_FAILURE,
-        FETCH_RESULTS, FETCH_RESULTS_SUCCESS, FETCH_RESULTS_FAILURE, LOADING, POST_SEARCH_QUERY,
-        POST_SEARCH_QUERY_SUCCESS, POST_SEARCH_QUERY_FAILURE} from './types';
+        FETCH_RESULTS, FETCH_RESULTS_SUCCESS, FETCH_RESULTS_FAILURE, LOADING} from './types';
 
-import { getSuggestions, getResults, postSearchRequest } from '../Axios';
-import history from '../Components/Layout/history';
+import { getSuggestions, getResults } from '../Axios';
 
 export const searchForm = query => dispatch => {
     dispatch({
@@ -42,17 +40,17 @@ export const fetchResults = () => dispatch => {
 
     const request = getResults();
     
-    return request.then(
-      response => dispatch(fetchResultsSuccess(response.data)),
-      err => dispatch(fetchResultsFailure(err))
-    );
+    return request
+    .then(response => { 
+    fetchResultsSuccess(dispatch, response);})
+    .catch(error => fetchResultsFailure(dispatch, error));
   }
 
-export const fetchResultsSuccess = (results) => {
-return {
-    type: FETCH_RESULTS_SUCCESS, 
-    payload: results
-}  
+export const fetchResultsSuccess = (dispatch, response) => {
+    dispatch({
+        type: FETCH_RESULTS_SUCCESS,
+        payload: response.data
+    }) 
 }
 
 export const fetchResultsFailure = (error) => {
@@ -60,27 +58,6 @@ return {
     type: FETCH_RESULTS_FAILURE,
     payload: {"message": error}
 }
-}
-
-export const postSearchQuery = (searchQuery) => dispatch => {
-    dispatch({ type: POST_SEARCH_QUERY })
-    return postSearchRequest(searchQuery)
-    .then(response => dispatch(postSearchQuerySuccess(dispatch, response)))
-    .catch(error => postSearchQueryFailure(dispatch, error));
-}
-
-export const postSearchQuerySuccess = (dispatch, response) => {
-    dispatch({
-        type: POST_SEARCH_QUERY_SUCCESS,
-        payload: response.data
-    })
-}
-
-export const postSearchQueryFailure = (dispatch, error) => {
-    dispatch({
-        type: POST_SEARCH_QUERY_FAILURE,
-        payload: {"message": error}
-    })
 }
 
 export const setLoading = () => {
